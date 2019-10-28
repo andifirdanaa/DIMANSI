@@ -58,6 +58,7 @@
 			<!-- END AWARDS -->
 
 			<!-- TABBED CONTENT -->
+			@if(auth()->user()->role == 'siswa')
 			<div class="custom-tabs-line tabs-line-bottom left-aligned">
 				<ul class="nav" role="tablist">
 					<li class="active"><a href="#tab-bottom-left1" role="tab" data-toggle="tab">Nilai Siswa</a></li>
@@ -65,29 +66,58 @@
 			</div>
 			<div class="panel">
 				<div class="panel-heading">
-					<h3 class="panel-title">Nilai</h3>
+					<h3 class="panel-title">Nilai siswa</h3>
 				</div>
 				<div class="panel-body">
-					{{-- <table class="table table-striped">
+					<table class="table table-striped">
 						<thead>
 							<tr>
-								<th>Kode</th>
 								<th>Nama Pelajaran</th>
 								<th>Nilai</th>
 						</thead>
 						<tbody>
-							@foreach(auth()->user()->siswa->mapel as $mapel)
-							<tr>
-								<td>{{$mapel->kode}}</td>
-								<td>{{$mapel->nama}}</td>
-								<td>{{$mapel->pivot->nilai}}</td>
-							</tr>
+							@foreach($nilai as $item)
+								<tr>
+									<td>{{$item->mapel->nama}}</td>
+									<td>{{$item->score}}</td>
+								</tr>
 							@endforeach
 							
 						</tbody>
-					</table> --}}
+					</table>
 				</div>
 			</div>
+			@endif
+			@if(auth()->user()->role == 'murid')
+			<div class="custom-tabs-line tabs-line-bottom left-aligned">
+				<ul class="nav" role="tablist">
+					<li class="active"><a href="#tab-bottom-left1" role="tab" data-toggle="tab">Nilai Siswa</a></li>
+				</ul>
+			</div>
+			<div class="panel">
+				<div class="panel-heading">
+					<h3 class="panel-title">Nilai siswa</h3>
+				</div>
+				<div class="panel-body">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Nama Pelajaran</th>
+								<th>Nilai</th>
+						</thead>
+						<tbody>
+							@foreach($nilai as $item)
+								<tr>
+									<td>{{$item->mapel->nama}}</td>
+									<td>{{$item->score}}</td>
+								</tr>
+							@endforeach
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+			@endif
 			<!-- END TABBED CONTENT -->
 		</div>
 		<!-- END RIGHT COLUMN -->

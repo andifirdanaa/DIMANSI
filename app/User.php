@@ -30,7 +30,7 @@ class User extends Authenticatable
         return $this->hasOne(Siswa::class);
                                         // yg mau diambil , yg mau make
     }
-       public function guru(){
+    public function guru(){
         return $this->hasOne(Guru::class);
                                         // yg mau diambil , yg mau make
       }
@@ -40,5 +40,8 @@ class User extends Authenticatable
     public function lembar()
     {
         return $this->belongsToMany(Lembar::class);
+    }
+     public function nilai(){
+        return $this->belongsToMany(Nilai::class);
     }
 }

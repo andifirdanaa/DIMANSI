@@ -122,16 +122,6 @@ Route::group(['middleware'=>['auth','checkRole:admin,siswa,guru,murid']],functio
 	//HOME
 	Route::get('/home', 'HomeController@index')->name('home');
 	
-	//SISWA
-	Route::get('/siswa/{id}/nilaisiswa','SiswaController@nilaisiswa');
-	Route::get('/profilesiswa', 'ProfileController@profilesiswa')->middleware();
-	Route::get('/editsiswa/{siswa}','ProfileController@editsiswa')->middleware();
-	Route::post('/updatesiswa/{siswa}','ProfileController@updatesiswa');
-
-	//GURU
-	Route::get('/myprofile', 'ProfileController@profileguru');
-	Route::get('/guru/{guru}','ProfileController@editguru');
-	Route::post('/updateguru/{guru}','ProfileController@updateguru');
 
 	//PASSWORD
 	Route::get('/changePassword','Auth\AuthController@change')->name('change');
@@ -147,5 +137,20 @@ Route::group(['middleware'=>['auth','checkRole:admin,siswa,guru,murid']],functio
 
 });
 
+Route::group(['middleware'=>['auth','checkRole:admin,siswa,murid']],function(){
+
+//SISWA
+	Route::get('/siswa/{id}/nilaisiswa','SiswaController@nilaisiswa');
+	Route::get('/profilesiswa', 'ProfileController@profilesiswa')->middleware();
+	Route::get('/editsiswa/{siswa}','ProfileController@editsiswa')->middleware();
+	Route::post('/updatesiswa/{siswa}','ProfileController@updatesiswa');
+});
+Route::group(['middleware'=>['auth','checkRole:guru']],function(){
+
+//GURU
+	Route::get('/myprofile', 'ProfileController@profileguru');
+	Route::get('/guru/{guru}','ProfileController@editguru');
+	Route::post('/updateguru/{guru}','ProfileController@updateguru');
+});
 
 Route::get('/logout','AuthController@logout');

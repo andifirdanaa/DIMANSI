@@ -15,4 +15,7 @@ class Nilai extends Model
         // 1 post hanya memiliki satu kategoti
         return $this->belongsTo('App\User');
     }
+    public function siswa(){
+    	return$this->belongsTo('App\Siswa');
+    }
 }

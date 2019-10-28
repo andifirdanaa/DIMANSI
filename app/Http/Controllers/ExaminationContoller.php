@@ -45,6 +45,16 @@ class ExaminationContoller extends Controller
      */
     public function store(Request $request)
     {
+         $this->validate($request,[
+        'soal'=>'required',
+        'kategori'=>'required',
+        'a'=> 'required',
+        'b'=>'required',
+        'c'=>'required',
+        'knc_jawaban'=>'required',
+        'aktif'=>'required',
+
+      ]);
         $kuis = new Kuis;
         $kuis->soal = $request->soal;
         $kuis->mapel_id = $request->kategori;
@@ -95,6 +105,16 @@ class ExaminationContoller extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request,[
+        'soal'=>'required',
+        'kategori'=>'required',
+        'a'=> 'required',
+        'b'=>'required',
+        'c'=>'required',
+        'knc_jawaban'=>'required',
+        'aktif'=>'required',
+
+      ]);
         $latihan = Kuis::find($id);
         $latihan->soal = $request->soal;
         $latihan->mapel_id = $request->kategori;

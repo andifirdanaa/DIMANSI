@@ -75,15 +75,15 @@
 						<thead>
 							<tr>
 								<th>Nama Siswa</th>
-								<th>Jumlah Pelajaran</th>
+								<th>Nama Pelajaran</th>
 								<th>Total Nilai</th>
 						</thead>
 						<tbody>
-							@foreach($siswa as $s)
+							@foreach($nilai as $item)
 							<tr>
-								<td>{{$s->nama_lengkap()}}</td>
-								<td>{{$s->mapel->count()}}</td>
-								<td>{{$s->nilai()}}</td>
+								<td>{{$item->siswa->nama_lengkap()}}</td>
+								<td>{{$item->mapel->nama}}</td>
+								<td>{{$item->score}}</td>
 							</tr>
 							@endforeach
 						</tbody>

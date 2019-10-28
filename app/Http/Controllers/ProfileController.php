@@ -9,14 +9,17 @@ use App\Siswa;
 use App\Guru;
 use App\User;
 use App\mapel;
+use DB;
+use App\Nilai;
 use Hash;
 use Validator;
 
 class ProfileController extends Controller
 {
     public function profilesiswa(Siswa $siswa){
-    	 
-    		return view ('siswa.myprofile', compact('siswa'));
+         $nilai = Nilai::where('user_id',Auth::user()->id)
+                ->get();
+    		return view ('siswa.myprofile', compact('siswa','nilai'));
     }
     public function editsiswa(Siswa $siswa){
 
@@ -37,9 +40,11 @@ class ProfileController extends Controller
       return Siswa::count();
     }
      public function profileguru(Guru $guru){
+        $user = \App\User::all();
         $siswa = \App\siswa::all();
-         $matapel = \App\mapel::all();
-        return view ('guru.myprofile',['guru'=>$guru, 'siswa'=>$siswa, 'matapel'=> $matapel]);
+        $nilai =  \App\Nilai::all();
+
+        return view ('guru.myprofile',['guru'=>$guru, 'siswa'=>$siswa, 'user'=> $user, 'nilai'=>$nilai]);
     }
     public function editguru(Guru $guru){
       return view ('guru.editprofile',['guru'=> $guru]);

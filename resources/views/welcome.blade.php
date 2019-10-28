@@ -19,6 +19,7 @@
   <!-- Theme CSS -->
   <link href="css/freelancer.min.css" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="96x96" href="{{asset('img/logo.png')}}">
+  <link href="{{asset('css/dimansi.css')}}" rel="stylesheet">
 
 </head>
 
@@ -67,10 +68,8 @@
   <!-- Masthead -->
   <header class="masthead bg-primary text-white text-center">
     <div class="container d-flex align-items-center flex-column">
-
       <!-- Masthead Avatar Image -->
       <img class="masthead-avatar mb-5" src="img/logo.png" alt="">
-
       <!-- Masthead Heading -->
       <h1 class="masthead-heading text-uppercase mb-0">DIMANSI</h1>
 
@@ -90,32 +89,40 @@
   </header>
  @else
   <!-- Masthead -->
-  <header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
-
+  <header class="masthead bg-primary text-white text-center" style="height: auto;">
+   <div class="container d-flex align-items-center flex-column"> 
+      <div class="container">
+        <div class="row">
+        <div class="col-md-16 col-lg-6" style="text-align: center; padding-top: 70px;">
       <!-- Masthead Avatar Image -->
-      <img class="masthead-avatar mb-5" src="img/logo.png" alt="">
+            <img class="head" src="img/logo.png" alt="">
+          </div>
 
+        <div class="col-md-16 col-lg-6" style="background-color: white; border-radius: 20px; height: auto;">
       <!-- Masthead Heading -->
-      <h1 class="masthead-heading text-uppercase mb-0">DIMANSI</h1>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom divider-light">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
-
-      <!-- Masthead Subheading -->
-      <p class="masthead-subheading font-weight-light mb-0">Website Belajar Online Untuk Anak-anak</p>
-
+      <h1 class="fontcolor" style="color: #000; text-align: center; padding-top: 20px;">DIMANSI</h1>
+      <p class="masthead-subheading font-weight-light mb-lg-0" style="color: #000; text-align: center; padding-top:30px; font-family:'Source Sans Pro',sans-serif; ">Website Belajar Online Untuk Anak-anak</p>
+      <p class="masthead-subheading font-weight-light mb-lg-0" style="color: #000; text-align: center; padding-top:30px; font-family:'Source Sans Pro',sans-serif; ">Dengan pembelajaran menarik melalui Game,Video,Kuis</p>
+      <div class="row">
+      <div class="col-md-4">
+       <p class="masthead-subheading font-weight-light mb-lg-0" style="padding-top: 30px;"><img class="kecil" src="img/game.png" alt=""></p>
+     </div>
+     <div class="col-md-4">
+       <p class="masthead-subheading font-weight-light mb-lg-0" style="padding-top: 30px;"><img class="kecil" src="img/Video.png" alt=""></p>
+     </div>
+      <div class="col-md-4">
+       <p class="masthead-subheading font-weight-light mb-lg-0" style="padding-top: 30px;padding-bottom: 30px;"><img class="kecil" src="img/kuis.png" alt=""></p>
+     </div>
+   </div>
     </div>
+    </div>
+    </div>
+    </div>
+  </div>
   </header>
 
   <!-- Portfolio Section -->
-  <section class="page-section portfolio" id="masuk">
+  <section class="back page-section portfolio" id="masuk">
     <div class="container">
 
       <!-- Portfolio Section Heading -->
