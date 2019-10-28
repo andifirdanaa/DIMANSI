@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UjianTable extends Migration
+class CreateNilaisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class UjianTable extends Migration
      */
     public function up()
     {
-         Schema::create('ujian', function (Blueprint $table) {
+        Schema::create('nilais', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('kode_kuis');
-            $table->string('nama_kuis');
-            $table->text('link');
+            $table->integer('user_id');
+            $table->string('benar');
+            $table->string('salah');
+            $table->string('kosong');
+            $table->string('score');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ class UjianTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('nilais');
     }
 }

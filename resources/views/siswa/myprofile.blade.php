@@ -19,7 +19,7 @@
 					<h3 class="name"><b>{{strtoupper(auth()->user()->siswa->nama_lengkap())}}</b></h3>
 					<span><b>{{auth()->user()->email}}</b></span>
 				</div>
-				<div class="profile-stat">
+				{{-- <div class="profile-stat">
 					<div class="row">
 						<div class="col-md-6 stat-item">
 							{{auth()->user()->siswa->mapel->count()}}<span>Mata Pelajaran</span>
@@ -28,7 +28,7 @@
 							{{auth()->user()->siswa->mapel->count()}}<span>Kelas</span>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 			</div>
 			<!-- END PROFILE HEADER -->
 
@@ -68,7 +68,7 @@
 					<h3 class="panel-title">Nilai</h3>
 				</div>
 				<div class="panel-body">
-					<table class="table table-striped">
+					{{-- <table class="table table-striped">
 						<thead>
 							<tr>
 								<th>Kode</th>
@@ -85,7 +85,7 @@
 							@endforeach
 							
 						</tbody>
-					</table>
+					</table> --}}
 				</div>
 			</div>
 			<!-- END TABBED CONTENT -->

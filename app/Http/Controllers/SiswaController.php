@@ -12,7 +12,7 @@ class SiswaController extends Controller
 {
     public function index (request $request){
 
-    	$data_siswa = \App\siswa::paginate(2);
+    	$data_siswa = \App\siswa::paginate(10);
     	return view('siswa.siswa',['data_siswa'=>$data_siswa]);
     }
     public function create(Request $request)

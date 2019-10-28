@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UjianTable extends Migration
+class AddStatusToKuis extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class UjianTable extends Migration
      */
     public function up()
     {
-         Schema::create('ujian', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('kode_kuis');
-            $table->string('nama_kuis');
-            $table->text('link');
-            $table->timestamps();
+        Schema::table('kuis', function (Blueprint $table) {
+            $table->integer('status')->after('aktif');
         });
     }
 
@@ -29,6 +25,8 @@ class UjianTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('kuis', function (Blueprint $table) {
+            //
+        });
     }
 }

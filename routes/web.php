@@ -12,28 +12,25 @@
 */
 
 
+//Logic Home redirect by Makajikenduri
 Route::get('/', function () {
 	if(Auth::user()){
-		$kontens = DB::table('kontens')->paginate(8);	
-		return view('home',compact('kontens'));
+		return redirect()->route('home');
 	}
     return view('welcome');
 });
-Route::get('/daftar',function(){
-	return view('navbar');
-});
 
+// Coba Konten index By Makajikenduri
 Route::get('/cobakonten' , function(){
 	$kontens = App\Konten::where('category_id', '=' , 4 )->get();
-	
 	return view ('cobakonten',compact('kontens'));
 })->name('coba.konten');
 
+// Coba Konten show video By Makajikenduri
 Route::get('/cobashow/{slug?}' , function($slug = null){
 	$konten = App\Konten::where('slug', '=' , $slug )->first();
 	// dd($konten);
 	return view('cobashow',compact('konten'));
-	
 })->name('coba.show');
 
 Route::get('/games' , function(){
@@ -47,20 +44,19 @@ Route::get('/games' , function(){
 
 Route::get('/gameshow/{slug?}' , function($slug = null){
 	if(Auth::user()){
-	$konten = App\Konten::where('slug', '=' , $slug )->first();
-	// dd($konten);
-	return view('siswa.gameshow',compact('konten'));
-}
+		$konten = App\Konten::where('slug', '=' , $slug )->first();
+		// dd($konten);
+		return view('siswa.gameshow',compact('konten'));
+	}
 	return view('welcome');
-	
 })->name('game.show');
 
 Route::get('/video' , function(){
-if(Auth::user()){
-	$kontens = App\Konten::where('category_id', '=' , 2 )->get();
-	
-	return view ('siswa.video',compact('kontens'));
-}
+	if(Auth::user()){
+		$kontens = App\Konten::where('category_id', '=' , 2 )->get();
+		
+		return view ('siswa.video',compact('kontens'));
+	}
 	return view ('welcome');
 })->name('siswa.video');
 
@@ -75,8 +71,8 @@ Route::get('/videoshow/{slug?}' , function($slug = null){
 
 Auth::routes();
 
-//	Controller admin
-Route::group(['middleware'=>'auth','checkRole:admin'],function(){
+//ROUTE CAN BE ACCESS FOR ADMIN ONLY
+Route::group(['middleware'=>['auth','checkRole:admin']],function(){
 	Route::get('/siswa', 'SiswaController@index');
 	Route::post('/siswa/create','SiswaController@create');
 	Route::get('/siswa/{siswa}/edit','SiswaController@edit');
@@ -93,36 +89,61 @@ Route::group(['middleware'=>'auth','checkRole:admin'],function(){
 	Route::post('/guru/{guru}/update','GuruController@update');
 	Route::get('/guru/{guru}/delete','GuruController@delete');
 
-	//categorys
+	//CATEGORY ROUTE BY MAKAJIXKENDURI
 	Route::resource('category','CategoryController');
 
-	//konten
-	Route::resource('konten','KontenController');
-	//Kuis
-	Route::get('/kuis','KuisController@index');
-	Route::post('/kuis/create','KuisController@create');
-	Route::get('/show/{ujian}','KuisController@show');
-	Route::get('/kuis/{ujian}/delete','KuisController@delete');
+	//NILAI ROUTE BY MAKAJIXKENDURI
+	Route::resource('nilai','NilaiController');
+
+	//KONTEN ROUTE BY MAKAJIXKENDURI
+	Route::get('/konten','KontenController@index')->name('konten.index');
+	Route::get('/konten/create','KontenController@create')->name('konten.create');
+	Route::post('/konten','KontenController@store')->name('konten.store');
+	Route::get('/konten/{konten}/edit','KontenController@edit')->name('konten.edit');
+	Route::put('/konten/{konten}','KontenController@update')->name('konten.update');
+	Route::delete('/konten/{konten}','KontenController@destroy')->name('konten.destroy');
+	
+
+	//KUIS ROUTE BY MAKAJIXKENDURI
+	Route::resource('examination','ExaminationContoller');
+	Route::post('examination/image','ExaminationContoller@KuisImage')->name('image');
+	Route::put('examination/{id}/edit2','ExaminationContoller@KuisEditImage')->name('kuis.image.edit');
+
+	//MAPEL ROUTE BY MAKAJIXKENDURI
+	Route::resource('mapel','MapelController');
+
 });
 
 
-//Controller admin,siswa,guru
-Route::group(['middleware'=>'auth','checkRole:admin,siswa,guru,murid'],function(){
+
+//ROUTE CAN BE ACCESS FOR ADMIN,SISWA,GURU
+Route::group(['middleware'=>['auth','checkRole:admin,siswa,guru,murid']],function(){
+	
+	//HOME
 	Route::get('/home', 'HomeController@index')->name('home');
-	//siswa
+	
+	//SISWA
 	Route::get('/siswa/{id}/nilaisiswa','SiswaController@nilaisiswa');
 	Route::get('/profilesiswa', 'ProfileController@profilesiswa')->middleware();
 	Route::get('/editsiswa/{siswa}','ProfileController@editsiswa')->middleware();
 	Route::post('/updatesiswa/{siswa}','ProfileController@updatesiswa');
 
-	// Guru
+	//GURU
 	Route::get('/myprofile', 'ProfileController@profileguru');
 	Route::get('/guru/{guru}','ProfileController@editguru');
 	Route::post('/updateguru/{guru}','ProfileController@updateguru');
 
-	//paswword
+	//PASSWORD
 	Route::get('/changePassword','Auth\AuthController@change')->name('change');
 	Route::put('/changePassword','Auth\AuthController@updatePassword')->name('password.update');
+
+	//KUIS FOR SISWA BY MAKAJIXKENDURI
+	Route::get('/kuis','KuisController@index')->name('kuis.index');
+	Route::get('soal/{id}','ExaminationContoller@soal')->name('soal');
+	Route::post('soal/jawab/{id}','ExaminationContoller@jawab')->name('soal.jawab');
+
+	//KONTEN FOR SISWA BY MAKAJIXKENDURI
+	Route::get('/konten/{konten}','KontenController@show')->name('konten.show');
 
 });
 

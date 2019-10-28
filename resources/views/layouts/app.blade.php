@@ -22,6 +22,7 @@
 
     @yield('css')
     @yield('header')
+    @yield('script')
 </head>
 
 @if(auth()->user()->role == 'siswa' || auth()->user()->role == 'murid')
@@ -124,7 +125,9 @@
                                 <div id="subPages" class="collapse ">
                                     <ul class="nav">
                                         <li><a href="{{route('category.index')}}" class=""><i class="fa fa-th-list"></i> <span>Data Kategori</span></a></li>
-                                        <li><a href="{{route('konten.index')}}" class=""><i class="fa fa-film"></i> <span>Konten</span></a></li>
+                                        <li><a href="{{route('mapel.index')}}" class=""><i class="fa fa-book"></i> <span>Data Mapel</span></a></li>
+                                        <li><a href="{{route('konten.index')}}" class=""><i class="fa fa-film"></i> <span>Data Konten</span></a></li>
+                                        <li><a href="{{route('examination.index')}}" class=""><i class="fa fa-check"></i> <span>Data Soal Kuis</span></a></li>
                                     </ul>
                                 </div>
                             </li>

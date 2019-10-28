@@ -7,22 +7,13 @@ use App\Http\Controllers\Controller;
 use App\ujian;
 use App\User;
 use App\Siswa;
+use App\Mapel;
 
 class KuisController extends Controller
 {
     public function index(Request $Request){
-    	$data = \App\ujian::all();
-    	return view('siswa.kuis',['data'=>$data]);
-    }
-    public function create(Request $request){
-    	$kuis = \App\ujian::create($request->all());
-    	return redirect('/kuis')-> with('sukses','Data Berhasil Diinput');
-    }
-    public function show(ujian $ujian){
-        return view('siswa.showkuis',['ujian' => $ujian ]);
-    }
-    public function delete(ujian $ujian){
-        $ujian-> delete($ujian);
-        return redirect('/kuis')->with('sukses','Data Berhasil dihapus');
+        $no = 1;
+    	$mapel = Mapel::all();
+    	return view('siswa.kuis',compact('mapel','no'));
     }
 }

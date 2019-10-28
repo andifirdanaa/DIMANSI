@@ -15,8 +15,8 @@ use Validator;
 class ProfileController extends Controller
 {
     public function profilesiswa(Siswa $siswa){
-    	 $matapel = \App\mapel::all();
-    		return view ('siswa.myprofile',['siswa'=> $siswa, 'matapel'=> $matapel]);
+    	 
+    		return view ('siswa.myprofile', compact('siswa'));
     }
     public function editsiswa(Siswa $siswa){
 
