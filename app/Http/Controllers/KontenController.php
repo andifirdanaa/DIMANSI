@@ -19,7 +19,7 @@ class KontenController extends Controller
     public function index()
     {
         $no = 1;
-        $kontens = Konten::all();
+        $kontens = Konten::paginate(10);
         return view ('konten.index',compact('kontens','no'));
     }
 

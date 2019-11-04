@@ -22,7 +22,7 @@ class ExaminationContoller extends Controller
     public function index()
     {
         $no = 1;
-        $latihans = Kuis::all();
+        $latihans = Kuis::paginate(5);
         return view ('examination.index' , compact('latihans','no'));
     }
 

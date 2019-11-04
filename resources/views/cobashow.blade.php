@@ -55,8 +55,8 @@
                     <button type="button" class="btn btn-primary btn-sm">Back</button>
                 </a>
                 <h1 class="display-4">HELLO, SOBAT DIMANSI</h1>
-                <p class="lead">Pada kesempatan kali ini kami akan memberikan sample salah satu video pembelajaran yang ada di DIMANSI oleh karna itu mari sama - sama kita nikmati video di bawah ini</p>
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <p class="lead">Pada kesempatan kali ini kami akan memberikan sample salah satu video pembelajaran yang ada di DIMANSI oleh karena itu mari sama - sama kita nikmati video di bawah ini</p>
+                <p></p>
                 <hr class="my-4">
                 <div class="row justify-content-center align-items-center">
                     <div class="content">

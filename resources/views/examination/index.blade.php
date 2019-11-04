@@ -52,6 +52,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            {!! $latihans->render() !!}
                             @foreach($latihans as $row)
                                 <!-- CATEGORY DELETE -->
                                     <div class="modal fade" id="{{$row->id}}-hapus">

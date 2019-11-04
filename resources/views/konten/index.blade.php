@@ -69,6 +69,7 @@
                                 @endforeach
                             </tbody>
                         </table>
+                         {!! $kontens->render() !!}
                         @foreach($kontens as $row)
                             <!-- CATEGORY DELETE -->
                                 <div class="modal fade" id="{{$row->id}}-hapus">
