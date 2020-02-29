@@ -14,6 +14,7 @@ return array(
     'ArithmeticError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
     'AssertionError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
     'CreateCategoriesTable' => $baseDir . '/database/migrations/2019_08_11_020211_create_categories_table.php',
+    'CreateDocumentTable' => $baseDir . '/database/migrations/2020_02_29_155722_create_document_table.php',
     'CreateKontensTable' => $baseDir . '/database/migrations/2019_08_11_015736_create_kontens_table.php',
     'CreateKuisTable' => $baseDir . '/database/migrations/2019_10_14_040213_create_kuis_table.php',
     'CreateMapelsTable' => $baseDir . '/database/migrations/2019_10_16_020627_create_mapels_table.php',

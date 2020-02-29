@@ -100,8 +100,8 @@
         @endif
       </div>
        <div class="form-group {{$errors->has('tanggal_lahir') ? 'has-error' : ' '}}">
-        <label for="nomer">Tanggal lahir</label>
-        <input name="nomer" type="text" class="form-control" id="tanggal_lahir" aria-describedby="emailHelp" placeholder="Tanggal lahir">
+        <label for="tanggal_lahir">Tanggal lahir</label>
+        <input name="tanggal_lahir" type="text" class="form-control" id="tanggal_lahir" aria-describedby="emailHelp" placeholder="Tanggal lahir">
         @if($errors -> has('tanggal_lahir'))
         <span class="help-block">{{$errors->first('tanggal_lahir')}}</span>
         @endif

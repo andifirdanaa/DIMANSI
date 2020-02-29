@@ -112,6 +112,11 @@ Route::group(['middleware'=>['auth','checkRole:admin']],function(){
 	//MAPEL ROUTE BY MAKAJIXKENDURI
 	Route::resource('mapel','MapelController');
 
+	//DOCUMENTS ROUTE BY MAKAJIKENDURI
+	Route::resource('document','DocumentController');
+	Route::get('showfile/{id}', 'DocumentController@showFile')->name('document.download');
+	
+
 });
 
 
@@ -144,6 +149,9 @@ Route::group(['middleware'=>['auth','checkRole:admin,siswa,murid']],function(){
 	Route::get('/profilesiswa', 'ProfileController@profilesiswa')->middleware();
 	Route::get('/editsiswa/{siswa}','ProfileController@editsiswa')->middleware();
 	Route::post('/updatesiswa/{siswa}','ProfileController@updatesiswa');
+	//created by makajikenduri
+	Route::get('list', 'ProfileController@listDocument')->name('document.list');
+	Route::get('downloadFile/{id}', 'ProfileController@showFile')->name('download.siswa');
 });
 Route::group(['middleware'=>['auth','checkRole:guru']],function(){
 

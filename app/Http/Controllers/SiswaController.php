@@ -17,6 +17,7 @@ class SiswaController extends Controller
     }
     public function create(Request $request)
     {
+      // dd($request);
       $this->validate($request,[
         'nama_depan'=>'required|min:1',
         'email'=> 'required|email|unique:users',
@@ -28,7 +29,7 @@ class SiswaController extends Controller
       ]);
     	$user = new\App\User;
       	$user->role = $request->role;
-      	$user->name = $request->nama_depan;
+        $user->name = $request->nama_depan;
       	$user->email = $request->email;
       	$user->password = bcrypt('rahasia');
       	$user->remember_token = str_random(60);

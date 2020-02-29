@@ -9,6 +9,7 @@ use App\Siswa;
 use App\Guru;
 use App\User;
 use App\mapel;
+use App\Document;
 use DB;
 use App\Nilai;
 use Hash;
@@ -61,4 +62,19 @@ class ProfileController extends Controller
       }
        return redirect('/myprofile')->with('sukses','Data Berhasil Diupdate');
     }
+
+    public function listDocument()
+    {
+        $no = 1;
+        $documents = Document::all();
+        // dd($document);
+        return view ('siswa.document',compact('documents','no'));
+    }
+
+    public function showFile($id){
+      $dw = Document::find($id);
+      
+      // return response()->file('./pdf/'.$dw->path_document);
+      return response()->download('./pdf/'.$dw->path_document);
+  }
 }

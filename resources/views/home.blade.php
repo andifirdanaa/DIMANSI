@@ -67,6 +67,17 @@
                 </a>
               </div>
             </div>
+            <div class="col-md-3" >
+              <div class="metric">
+                <span class="icon" ><i class="fa fa-download"></i></span>
+                <a href="{{route('document.list')}}">
+                  <p>
+                    <span class="number"  >Download File Area</span>
+                    <span class="title"><br></span>
+                  </p>
+                </a>
+              </div>
+            </div>
             <div class="col-md-3">
               <div class="metric3">
                 <span class="icon"><i class="lnr lnr-film-play"></i></span>

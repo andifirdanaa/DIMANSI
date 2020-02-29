@@ -347,6 +347,7 @@ class ComposerStaticInit72046d388a66822a073d997678c3cda2
         'ArithmeticError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/ArithmeticError.php',
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
         'CreateCategoriesTable' => __DIR__ . '/../..' . '/database/migrations/2019_08_11_020211_create_categories_table.php',
+        'CreateDocumentTable' => __DIR__ . '/../..' . '/database/migrations/2020_02_29_155722_create_document_table.php',
         'CreateKontensTable' => __DIR__ . '/../..' . '/database/migrations/2019_08_11_015736_create_kontens_table.php',
         'CreateKuisTable' => __DIR__ . '/../..' . '/database/migrations/2019_10_14_040213_create_kuis_table.php',
         'CreateMapelsTable' => __DIR__ . '/../..' . '/database/migrations/2019_10_16_020627_create_mapels_table.php',

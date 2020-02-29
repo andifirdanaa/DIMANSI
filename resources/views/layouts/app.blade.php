@@ -128,6 +128,7 @@
                                         <li><a href="{{route('mapel.index')}}" class=""><i class="fa fa-book"></i> <span>Data Mapel</span></a></li>
                                         <li><a href="{{route('konten.index')}}" class=""><i class="fa fa-film"></i> <span>Data Konten</span></a></li>
                                         <li><a href="{{route('examination.index')}}" class=""><i class="fa fa-check"></i> <span>Data Soal Kuis</span></a></li>
+                                        <li><a href="{{route('document.index')}}" class=""><i class="fa fa-download"></i> <span>Data Unduhan Doc</span></a></li>
                                     </ul>
                                 </div>
                             </li>
