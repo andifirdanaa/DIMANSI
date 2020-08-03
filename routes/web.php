@@ -95,6 +95,9 @@ Route::group(['middleware'=>['auth','checkRole:admin']],function(){
 	//NILAI ROUTE BY MAKAJIXKENDURI
 	Route::resource('nilai','NilaiController');
 
+	//Voucher Rouye
+	Route::resource('voucher','VoucherController');
+
 	//KONTEN ROUTE BY MAKAJIXKENDURI
 	Route::get('/konten','KontenController@index')->name('konten.index');
 	Route::get('/konten/create','KontenController@create')->name('konten.create');

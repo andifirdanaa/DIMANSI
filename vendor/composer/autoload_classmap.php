@@ -20,6 +20,7 @@ return array(
     'CreateMapelsTable' => $baseDir . '/database/migrations/2019_10_16_020627_create_mapels_table.php',
     'CreateNilaisTable' => $baseDir . '/database/migrations/2019_10_15_050008_create_nilais_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreateTableVochers' => $baseDir . '/database/migrations/2020_08_03_072332_create_table_vochers.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'DivisionByZeroError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',

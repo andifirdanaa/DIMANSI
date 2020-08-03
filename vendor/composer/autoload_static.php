@@ -353,6 +353,7 @@ class ComposerStaticInit72046d388a66822a073d997678c3cda2
         'CreateMapelsTable' => __DIR__ . '/../..' . '/database/migrations/2019_10_16_020627_create_mapels_table.php',
         'CreateNilaisTable' => __DIR__ . '/../..' . '/database/migrations/2019_10_15_050008_create_nilais_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+        'CreateTableVochers' => __DIR__ . '/../..' . '/database/migrations/2020_08_03_072332_create_table_vochers.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
         'DivisionByZeroError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/DivisionByZeroError.php',
