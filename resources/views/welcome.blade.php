@@ -34,29 +34,29 @@
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto list-inline">
            @if (Route::has('login'))
-          @auth
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/home">Home</a>
+            @auth
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/home">Home</a>
 
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#masuk">Masuk</a>
+                <a class="nav-link py-3 px-0 px-lg-3" data-toggle="modal" data-target="#portfolioModal">Masuk</a>
 
-          </li>
-          <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Tentang</a>
-          </li>
-           @else
-           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Tentang</a>
-          </li>
-           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3" href="https://docs.google.com/forms/d/e/1FAIpQLSfsixd0lF5_uKXH-FdZT4gFxshRGXRyFFrOP0ZXgAWMb5_umw/viewform?usp=sf_link">Daftar</a>
-          </li>
-           <li class="nav-item mx-0 mx-lg-1">
-            <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#masuk">Masuk</a>
-          </li>
-           @endauth
+              </li>
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Tentang</a>
+              </li>
+              @else
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">Tentang</a>
+              </li>
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3" href="https://docs.google.com/forms/d/e/1FAIpQLSfsixd0lF5_uKXH-FdZT4gFxshRGXRyFFrOP0ZXgAWMb5_umw/viewform?usp=sf_link">Daftar</a>
+              </li>
+              <li class="nav-item mx-0 mx-lg-1">
+                <a class="nav-link py-3 px-0 px-lg-3" data-toggle="modal" data-target="#portfolioModal" href="#">Masuk</a>
+              </li>
+            @endauth
            @endif
          
         </ul>
@@ -121,76 +121,18 @@
   </div>
   </header>
 
-  <!-- Portfolio Section -->
-  <section class="back page-section portfolio" id="masuk">
-    <div class="container">
-
-      <!-- Portfolio Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">MASUK</h2>
-
-      <!-- Icon Divider -->
-      <div class="divider-custom">
-        <div class="divider-custom-line"></div>
-        <div class="divider-custom-icon">
-          <i class="fas fa-star"></i>
-        </div>
-        <div class="divider-custom-line"></div>
-      </div>
-
-      <!-- Portfolio Grid Items -->
-      <div class="row">
-
-        <!-- Portfolio Item 1 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i>Murid</i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/anak.jpg" alt="">
-          </div>
-        </div>
-
-        <!-- Portfolio Item 2 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i>Guru</i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/guru.jpg" alt="">
-          </div>
-        </div>
-
-        <!-- Portfolio Item 3 -->
-        <div class="col-md-6 col-lg-4">
-          <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
-            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-              <div class="portfolio-item-caption-content text-center text-white">
-                <i>Orang Tua</i>
-              </div>
-            </div>
-            <img class="img-fluid" src="img/portfolio/orangtua.jpg" alt="">
-          </div>
-        </div>
-
-      <!-- /.row -->
-
-    </div>
-  </section>
+  
 @endauth
 @endif
   <!-- About Section -->
-  <section class="page-section bg-primary text-white mb-0" id="about">
+  <section class="back page-section portfolio  text-black mb-0" id="about">
     <div class="container">
 
       <!-- About Section Heading -->
-      <h2 class="page-section-heading text-center text-uppercase text-white">Tentang</h2>
+      <h2 class="page-section-heading text-center text-uppercase text-black">Tentang</h2>
 
       <!-- Icon Divider -->
-      <div class="divider-custom divider-light">
+      <div class="divider-custom divider-black">
         <div class="divider-custom-line"></div>
         <div class="divider-custom-icon">
           <i class="fas fa-star"></i>
@@ -209,7 +151,7 @@
 
        <!-- About Section Button -->
       <div class="text-center mt-4">
-        <a class="btn btn-xl btn-outline-light" href="{{route('coba.konten')}}">
+        <a class="btn btn-xl btn-outline-primary" href="{{route('coba.konten')}}" data-toggle="modal" data-target="#voucherModal">
           <i class="fas fa-video mr-2"></i>
           Ayo Coba Lihat!
         </a>
@@ -264,7 +206,7 @@
   <!-- Copyright Section -->
   <section class="copyright py-4 text-center text-white">
     <div class="container">
-      <small>Copyright &copy; DIMANSI 2019</small>
+      <small>COPYRIGHT &copy; DIMANSI {{date('Y')}}</small>
     </div>
   </section>
 
@@ -277,9 +219,9 @@
 
   <!-- Portfolio Modals -->
 
-  <!-- Portfolio Modal 1 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-labelledby="portfolioModal1Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+  <!-- Login Modal  -->
+  <div class="portfolio-modal modal fade" id="portfolioModal" tabindex="-1" role="dialog" aria-labelledby="portfolioModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
       <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">
@@ -291,37 +233,37 @@
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <!-- Portfolio Modal - Title -->
-               <form class="form-auth-small" method="POST" action="{{ route('login') }}">
-                                {{ csrf_field() }}
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <label for="signin-email" class="control-label sr-only">Email</label>
-                                    <input name="email" type="email" class="form-control" id="signin-email" placeholder="Email">
-                                    @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                                </div>
-                                <div class="form-group">
-                                    <label for="signin-password" class="control-label sr-only">Password</label>
-                                    <input name ="password" type="password" class="form-control" id="signin-password" placeholder="Password">
-                                    @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                                </div>
-                                <div class="form-group clearfix">
-                                    <label class="fancy-checkbox element-left">
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                                        <span>Remember me</span>
-                                    </label>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
-                                <div class="bottom">
-                                    <span class="helper-text"><i class="fa fa-lock"></i> <a href="{{ route('password.request') }}">Forgot password?</a></span>
-                                </div>
-                            </form>
+                <form class="form-auth-small" method="POST" action="{{ route('login') }}">
+                    {{ csrf_field() }}
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <label for="signin-email" class="control-label sr-only">Email</label>
+                        <input name="email" type="email" class="form-control" id="signin-email" placeholder="Email">
+                        @if ($errors->has('email'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                    </div>
+                    <div class="form-group">
+                        <label for="signin-password" class="control-label sr-only">Password</label>
+                        <input name ="password" type="password" class="form-control" id="signin-password" placeholder="Password">
+                        @if ($errors->has('password'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('password') }}</strong>
+                        </span>
+                    @endif
+                    </div>
+                    <div class="form-group clearfix">
+                        <label class="fancy-checkbox element-left">
+                            <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
+                            <span>Remember me</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
+                    <div class="bottom">
+                        <span class="helper-text"><i class="fa fa-lock"></i> <a href="{{ route('password.request') }}">Forgot password?</a></span>
+                    </div>
+                </form>
               </div>
             </div>
           </div>
@@ -330,51 +272,29 @@
     </div>
   </div>
 
-  <!-- Portfolio Modal 2 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-labelledby="portfolioModal2Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+  <!-- Login Modal  -->
+  <div class="portfolio-modal modal fade" id="voucherModal" tabindex="-1" role="dialog" aria-labelledby="voucherModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
       <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
+        
         <div class="modal-body text-center">
           <div class="container">
             <div class="row justify-content-center">
+              <h4 class="text-uppercase mb-4">Masukan Kode Voucher Kamu</h4>
               <div class="col-lg-8">
                 <!-- Portfolio Modal - Title -->
-               <form class="form-auth-small" method="POST" action="{{ route('login') }}">
-                                {{ csrf_field() }}
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <label for="signin-email" class="control-label sr-only">Email</label>
-                                    <input name="email" type="email" class="form-control" id="signin-email" placeholder="Email">
-                                    @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                                </div>
-                                <div class="form-group">
-                                    <label for="signin-password" class="control-label sr-only">Password</label>
-                                    <input name ="password" type="password" class="form-control" id="signin-password" placeholder="Password">
-                                    @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                                </div>
-                                <div class="form-group clearfix">
-                                    <label class="fancy-checkbox element-left">
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                                        <span>Remember me</span>
-                                    </label>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
-                                <div class="bottom">
-                                    <span class="helper-text"><i class="fa fa-lock"></i> <a href="{{ route('password.request') }}">Forgot password?</a></span>
-                                </div>
-                            </form>
+                <form class="form-auth-small" method="POST" action="{{ route('coba.konten') }}">
+                    {{ csrf_field() }}
+                    <div class="form-group{{ $errors->has('voucher') ? ' has-error' : '' }}">
+                        <input name="voucher" type="text" class="form-control" id="signin-voucher" placeholder="Voucher">
+                        @if ($errors->has('voucher'))
+                          <span class="help-block">
+                              <strong>{{ $errors->first('voucher') }}</strong>
+                          </span>
+                        @endif
+                    </div>
+                    <button type="submit" class="btn btn-primary ">Submit!</button>
+                </form>
               </div>
             </div>
           </div>
@@ -383,58 +303,7 @@
     </div>
   </div>
 
-  <!-- Portfolio Modal 3 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-labelledby="portfolioModal3Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-      <div class="modal-content">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">
-            <i class="fas fa-times"></i>
-          </span>
-        </button>
-        <div class="modal-body text-center">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <!-- Portfolio Modal - Title -->
-               <form class="form-auth-small" method="POST" action="{{ route('login') }}">
-                                {{ csrf_field() }}
-                                <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                    <label for="signin-email" class="control-label sr-only">Email</label>
-                                    <input name="email" type="email" class="form-control" id="signin-email" placeholder="Email">
-                                    @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                                </div>
-                                <div class="form-group">
-                                    <label for="signin-password" class="control-label sr-only">Password</label>
-                                    <input name ="password" type="password" class="form-control" id="signin-password" placeholder="Password">
-                                    @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                                </div>
-                                <div class="form-group clearfix">
-                                    <label class="fancy-checkbox element-left">
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
-                                        <span>Remember me</span>
-                                    </label>
-                                </div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">LOGIN</button>
-                                <div class="bottom">
-                                    <span class="helper-text"><i class="fa fa-lock"></i> <a href="{{ route('password.request') }}">Forgot password?</a></span>
-                                </div>
-                            </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
  
   <!-- Bootstrap core JavaScript -->

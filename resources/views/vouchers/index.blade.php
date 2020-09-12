@@ -24,6 +24,12 @@
                                     {{session('info')}}
                                 </div>
                             @endif
+
+                            @if(session('danger'))
+                                <div class="alert alert-danger" style="margin:10px">
+                                    {{session('danger')}}
+                                </div>
+                            @endif
                         <div class="panel-body" style="overflow-x:auto;">
                             <table class="table table-hover center" >
                                 <thead>

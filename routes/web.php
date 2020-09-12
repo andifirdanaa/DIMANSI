@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use Illuminate\Http\Request;
 
 //Logic Home redirect by Makajikenduri
 Route::get('/', function () {
@@ -21,10 +21,23 @@ Route::get('/', function () {
 });
 
 // Coba Konten index By Makajikenduri
-Route::get('/cobakonten' , function(){
-	$kontens = App\Konten::where('category_id', '=' , 4 )->get();
-	return view ('cobakonten',compact('kontens'));
-})->name('coba.konten');
+Route::post('/cobakonten' , function(Request $request){
+	$voucher = App\Voucher::where('kode_voucher', $request->voucher)->first();
+	
+	if($voucher != null){
+		$dn = date('Y-m-d');
+		if($voucher->expired_until > $dn){
+			$kontens = App\Konten::where('category_id', '=' , 4 )->get();
+			return view ('cobakonten',compact('kontens'));
+		}else{
+			return view('vouchers.expired');
+		}
+	}else{
+		return view('vouchers.404');
+	}
+
+	
+})->name('coba.konten')->middleware('checkVoucher');
 
 // Coba Konten show video By Makajikenduri
 Route::get('/cobashow/{slug?}' , function($slug = null){

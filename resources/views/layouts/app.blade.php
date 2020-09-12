@@ -119,6 +119,7 @@
 
                             <li><a href="/siswa" class=""><i class="lnr lnr-user"></i> <span>Data Siswa</span></a></li>
                             <li><a href="/guru" class=""><i class="lnr lnr-user"></i> <span>Data Guru</span></a></li>
+                            <li><a href="{{route('voucher.index')}}"><i class="lnr lnr-gift"></i> <span>Data Voucher Gratis</span></a></li>
                            <!--  <li><a href="#" class=""><i class="fa fa-database"></i> <span>Nilai Siswa</span></a></li> -->
                             <li>
                                 <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa fa-database"></i> <span>Data Konten</span>     <i class="icon-submenu lnr lnr-chevron-left"></i></a>

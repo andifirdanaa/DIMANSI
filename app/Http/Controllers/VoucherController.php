@@ -102,6 +102,6 @@ class VoucherController extends Controller
     {
         $voucher = Voucher::find($id);
         $voucher->delete();
-        return back()->withInfo('Voucher '.$voucher->kode_voucher.' berhasil dihapus');
+        return back()->withDanger('Voucher '.$voucher->kode_voucher.' berhasil dihapus');
     }
 }
